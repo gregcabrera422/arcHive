@@ -2,14 +2,17 @@ package untitledhorton.com.archive;
 
 import android.support.annotation.IdRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
 public class DashboardActivity extends AppCompatActivity {
 
+    Toolbar toolbar;
     BottomBar mBottomBar;
 
     @Override
@@ -21,27 +24,38 @@ public class DashboardActivity extends AppCompatActivity {
         mBottomBar.noNavBarGoodness();
         mBottomBar.setItems(R.menu.bottombar_tabs);
 
-
-
-
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
                 if (menuItemId == R.id.bottomBarItemOne) {
-                    // The user selected item number one.
-                   getSupportActionBar().setTitle("Reminders");
+
+                    ReminderFragment f = new ReminderFragment();
+                    android.app.FragmentManager fm = getFragmentManager();
+                    fm.beginTransaction().replace(R.id.myCoordinator, f).commit();
+                    getSupportActionBar().setTitle("Reminders");
+
                 } else if (menuItemId == R.id.bottomBarItemTwo){
-                   getSupportActionBar().setTitle("Tasks");
+
+                    getSupportActionBar().setTitle("Tasks");
+
+
                 } else if (menuItemId == R.id.bottomBarItemThree){
-                   getSupportActionBar().setTitle("Events");
+
+                    getSupportActionBar().setTitle("Events");
+
                 } else if (menuItemId == R.id.bottomBarItemFour){
+
                     CalendarFragment f = new CalendarFragment();
                     android.app.FragmentManager fm = getFragmentManager();
                     fm.beginTransaction().replace(R.id.myCoordinator,f).commit();
                     getSupportActionBar().setTitle("Calendar");
+
                 } else if (menuItemId == R.id.bottomBarItemFive){
+
                     getSupportActionBar().setTitle("Classes");
+
                 } else{
+
                     ProfileFragment f = new ProfileFragment();
                     android.app.FragmentManager fm = getFragmentManager();
                     fm.beginTransaction().replace(R.id.myCoordinator,f).commit();

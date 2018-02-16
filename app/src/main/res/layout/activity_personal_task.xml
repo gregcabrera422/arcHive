@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="untitledhorton.com.archive.PersonalTaskActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Enter Title"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="201dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:onClick="pickDateTime"
+        android:text="Pick Date and Time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:onClick="saveReminder"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="0dp"
+        android:layout_height="153dp"
+        android:layout_marginBottom="82dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="75dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Enter message"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDateTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintEnd_toEndOf="@+id/etMessage"
+        app:layout_constraintTop_toBottomOf="@+id/etMessage" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="303dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="87dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="87dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtDateTime">
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            android:src="@drawable/red_rectangle" />
+
+        <RadioButton
+            android:id="@+id/radioHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="checkButton"
+            android:text="High"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="358dp" />
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            android:src="@drawable/orange_rectangle" />
+
+        <RadioButton
+            android:id="@+id/radioMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Medium"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="358dp" />
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            android:src="@drawable/yellow_rectangle" />
+
+        <RadioButton
+            android:id="@+id/radioLow"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Low"
+            tools:layout_editor_absoluteX="259dp"
+            tools:layout_editor_absoluteY="358dp" />
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>
